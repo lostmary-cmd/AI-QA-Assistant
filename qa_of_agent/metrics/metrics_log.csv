@@ -1,0 +1,2 @@
+date,command,test_case_id,input,completeness_0_10,formatting_0_10,relevance_0_10,no_hallucinations_0_1,language_match_0_1,total_score,bug_id,comment
+2026-06-08,/testcases,TC001-001,"Форма логина",9,10,9,1,1,48,,Первичный замер
