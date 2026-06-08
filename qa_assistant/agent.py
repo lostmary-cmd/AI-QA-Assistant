@@ -18,6 +18,7 @@ COMMAND_TO_PROMPT: Dict[str, str] = {
     "/http": "http_prompt.md",
     "/interview": "interview_prompt.md",
     "/swagger": "swagger_prompt.md",
+    "/postman": "postman_prompt.md",
 }
 
 OLLAMA_MODEL = "qwen2.5:3b"
