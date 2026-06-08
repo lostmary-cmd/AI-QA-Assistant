@@ -1,68 +1,128 @@
-# AI QA Assistant Project
+# AI QA Assistant
 
-Проект состоит из двух частей:
+AI QA Assistant — локальный помощник для QA-инженера на Python + Ollama.
 
-1. `qa_assistant` — сам AI QA Assistant.
-2. `qa_of_agent` — QA-система для тестирования ответов агента.
+## Возможности
 
-## Полный цикл
+### /testcases
 
-### 1. Ввод
+Генерация тест-кейсов:
+
+* Positive
+* Negative
+* Boundary
+* Smoke
+
+### /checklist
+
+Генерация чек-листов:
+
+* UI
+* Functional
+* Edge Cases
+
+### /weakspots
+
+Анализ требований:
+
+* неоднозначности
+* противоречия
+* отсутствующие проверки
+* вопросы к разработчику
+
+### /negative
+
+Генерация негативных сценариев:
+
+* SQL Injection
+* XSS
+* Неверные типы данных
+* Отсутствующие поля
+* Несуществующие ID
+* Конкурентные запросы
+
+### /bugreport
+
+Автоматическая генерация баг-репортов.
+
+### /http
+
+Справочник по HTTP и API ошибкам.
+
+### /interview
+
+Подготовка к собеседованию Junior QA.
+
+---
+
+## Технологии
+
+* Python
+* Ollama
+* Qwen
+* Git
+* GitHub
+
+---
+
+## Установка
 
 ```bash
-python cli.py /testcases "Форма логина: email обязателен, пароль 8-32 символа"
+pip install -r requirements.txt
 ```
 
-### 2. Ответ агента
+Установить Ollama:
 
-Агент должен вернуть таблицу:
-
-```text
-ID | Название | Предусловие | Шаги | Ожидаемый результат | Приоритет
+```bash
+ollama pull qwen2.5:3b
 ```
 
-### 3. Тест-кейс
-
-Берём тест из:
-
-```text
-qa_of_agent/test_cases/TC001_testcases_cmd.md
-```
-
-### 4. Баг-репорт
-
-Если агент не добавил smoke-проверки, создаём баг по шаблону:
-
-```text
-qa_of_agent/bug_reports/BUG_TEMPLATE.md
-```
-
-### 5. Правка промпта
-
-Правим:
-
-```text
-qa_assistant/prompts/testcases_prompt.md
-```
-
-Например, добавляем правило:
-
-```text
-Обязательно добавь минимум 1 smoke-проверку.
-```
-
-### 6. Changelog
-
-Записываем изменение:
-
-```text
-qa_of_agent/changelog/CHANGELOG.md
-```
+---
 
 ## Запуск
 
-Смотри инструкцию:
+```bash
+python cli.py /http "404"
+```
+
+Пример:
+
+```bash
+python cli.py /testcases "Форма логина"
+```
+
+---
+
+## Архитектура
 
 ```text
-qa_assistant/README.md
+CLI
+↓
+Agent
+↓
+Prompt Engine
+↓
+Ollama
+↓
+LLM Response
 ```
+
+---
+
+## Roadmap
+
+* [x] Test Cases Generator
+* [x] Checklist Generator
+* [x] Bug Report Generator
+* [x] HTTP Helper
+* [ ] Swagger Analyzer
+* [ ] Postman Collection Generator
+* [ ] SQL Test Generator
+* [ ] Export to Excel
+
+---
+
+## Author
+
+Slava Kazansky
+QA Engineer / AI QA Enthusiast
