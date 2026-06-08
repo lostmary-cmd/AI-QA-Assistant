@@ -1,3 +1,3 @@
-# No Python dependencies required.
-# AI QA Assistant uses Python standard library only.
-# Install Ollama separately: https://ollama.com
+# AI QA Assistant uses only Python standard library.
+# Ollama must be installed separately:
+# https://ollama.com

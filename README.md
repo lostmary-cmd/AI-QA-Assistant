@@ -53,6 +53,51 @@ AI QA Assistant — локальный помощник для QA-инженер
 
 Подготовка к собеседованию Junior QA.
 
+### /swagger
+
+Генерирует API тесты по описанию Swagger/OpenAPI endpoint.
+
+Возможности:
+
+* Позитивные API тесты
+* Негативные API тесты
+* Граничные проверки
+* Проверки HTTP статус-кодов
+* Проверки структуры ответа
+* Проверки обязательных полей
+* Проверки авторизации и аутентификации
+* Анализ рисков и рекомендации QA
+
+Пример:
+
+```bash
+python cli.py /swagger "POST /users"
+```
+
+### /postman
+
+Генерирует готовые сценарии тестирования для Postman.
+
+Возможности:
+
+* Формирование Request Method
+* Формирование URL endpoint
+* Формирование Headers
+* Примеры Authorization
+* Примеры Request Body
+* Позитивные проверки
+* Негативные проверки
+* Граничные проверки
+* Проверки HTTP статус-кодов
+* Генерация Postman Tests Script
+
+Пример:
+
+```bash
+python cli.py /postman "POST /login email password"
+```
+
+
 ---
 
 ## Технологии
@@ -109,20 +154,25 @@ LLM Response
 
 ---
 
-## Roadmap
+## План развития
 
-* [x] Test Cases Generator
-* [x] Checklist Generator
-* [x] Bug Report Generator
-* [x] HTTP Helper
-* [ ] Swagger Analyzer
-* [ ] Postman Collection Generator
-* [ ] SQL Test Generator
-* [ ] Export to Excel
+* [x] Генератор тест-кейсов
+* [x] Генератор чек-листов
+* [x] Анализ требований
+* [x] Генератор негативных сценариев
+* [x] Генератор баг-репортов
+* [x] Помощник по HTTP/API
+* [x] Тренажёр QA-собеседований
+* [x] Генератор Swagger API тестов
+* [x] Генератор Postman сценариев
+* [ ] Web-интерфейс на Streamlit
+* [ ] Экспорт в Excel
+* [ ] Экспорт в Qase/TestRail
+* [ ] Генератор SQL-запросов
 
 ---
 
-## Author
+## Автор
 
 Slava Kazansky
 QA Engineer / AI QA Enthusiast
